@@ -39,15 +39,16 @@ def derivates(t, y):
     '''
     Matrix with the distances rij and tensor of
     the unitary vectors [uij(x), uij(y)]:
+
     '''
     global G, m, N
 
     r = np.zeros((N, N))
     u = np.zeros((2, N, N))
-    # Tupla que es retornarà:
+    # Array to be returned:
     ynew = np.zeros(4 * N)
 
-    # Loop principal:
+    # Principal loop:
     for row in range(N):
         for col in range(row + 1, N):
 
