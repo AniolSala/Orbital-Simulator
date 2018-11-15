@@ -11,7 +11,7 @@ class Planet():
         self.r = scale * (m**(1. / 3.))
         self.scale = scale
 
-        N = 50
+        N = 30
         self.clist = color * N
         self.vlist = []
         for angle in linspace(0, 2 * pi, N):

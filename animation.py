@@ -3,7 +3,6 @@ import pyglet.gl
 from planet import Planet
 from Nbodyprob import y0, RK4, h, N, m
 import numpy as np
-import time
 
 
 class MyWindow(pyglet.window.Window):
@@ -33,13 +32,14 @@ class MyWindow(pyglet.window.Window):
         self.fps_display.set_fps(50)
 
     def update(self, dt):
-        for i in range(50):
+        for i in range(30):
             self.step += h
             y = RK4(self.step, self.position)
             self.position = y
 
         for i in range(N):
             self.planetlist[i].update(dt, np.array((y[i], y[i+N])))
+
 
 if __name__ == '__main__':
     world = MyWindow(width=800, height=600)
