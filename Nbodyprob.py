@@ -11,7 +11,7 @@ y0 = np.zeros(4 * N)
 
 # Interesting exercice: Look what happens when a body leaves
 # the earth from its surface (earth radius = 0.06371) with a
-# velocity equals to the velocity scape (vscape = 11.2e-5).
+# velocity equals to the scape velocity (vscape = 11.2e-5).
 
 # Array with the initial conditions:
 # y0 = [x1, ..., xN, y1, ..., yN, velx1, ..., velxN, vely1, ..., velyN].
@@ -37,8 +37,15 @@ G = 4e-10
 
 def derivates(t, y):
     '''
-    Matrix with the distances rij and tensor of
-    the unitary vectors [uij(x), uij(y)]:
+    Here there will be all the physics (the force
+    to which is particle is subjected):
+    dy/dt = d[x1, ..., xN, v1, ..., vN]/dt
+          =  [v1, ..., vN, a1, ..., aN]
+          =  [y[1 + N], ..., y[2N], F1/m, ..., FN/m]
+          
+    being Fi the force that acts to the i-th particle
+    (in this case, the gravitational force that each
+    of the other particles make to the i-th particle)
 
     '''
     global G, m, N
