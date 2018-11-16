@@ -5,6 +5,7 @@ A planets orbital simulator using python and pyglet. The gravitational equations
 Unit of distance: 10e8 m (hence the distance between the Earth and the Moon is 4).
 Unit of velocity: 10e-8 m/s.
 Unit of time: 1s
+Unit of mass: Mass of the Earth
 
 For example, to simulate the Earth-Moon system, you should use N = 2 and:
 
